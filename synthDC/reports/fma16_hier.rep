@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : hierarchy
+Design : fma16
+Version: R-2020.09-SP5
+Date   : Mon Apr 25 08:55:14 2022
+****************************************
+
+Attributes:
+    r - licensed design
+
+fma16              r
+    scc9gena_and3_0            scc9gena_tt_1.2v_25C
+    scc9gena_fa_m              scc9gena_tt_1.2v_25C
+    scc9gena_inv_0             scc9gena_tt_1.2v_25C
+    scc9gena_inv_m             scc9gena_tt_1.2v_25C
+    scc9gena_nand2_m           scc9gena_tt_1.2v_25C
+    scc9gena_nor2_0            scc9gena_tt_1.2v_25C
+    scc9gena_nor2_m            scc9gena_tt_1.2v_25C
+    scc9gena_xnorlp2_m         scc9gena_tt_1.2v_25C
+1

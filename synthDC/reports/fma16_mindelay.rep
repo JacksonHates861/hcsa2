@@ -1,0 +1,35 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nets
+        -max_paths 1
+        -transition_time
+        -capacitance
+Design : fma16
+Version: R-2020.09-SP5
+Date   : Mon Apr 25 08:55:14 2022
+****************************************
+
+Operating Conditions: PVT_1P2V_25C   Library: scc9gena_tt_1.2v_25C
+Wire Load Model Mode: top
+
+  Startpoint: z[0] (input port)
+  Endpoint: result[0] (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: min
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  z[0] (in)                                      0.017490  0.004803   0.004803 r
+  z[0] (net)                     2     0.002153            0.000000   0.004803 r
+  U17/Y (scc9gena_xnorlp2_m)                     0.022774  0.026198   0.031001 f
+  result[0] (net)                1     0.001771            0.000000   0.031001 f
+  result[0] (out)                                0.022774  0.000000   0.031001 f
+  data arrival time                                                   0.031001
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
