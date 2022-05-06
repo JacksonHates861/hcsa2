@@ -22,7 +22,7 @@ module rounder (Result, DenormIO, Flags, rm, P, OvEn,
 		norm_shift, A);
 
    input  [2:0]  rm;
-   input         P;
+   input  [1:0]  P;
    input         OvEn;
    input         UnEn;
    input         exp_valid;
@@ -77,7 +77,7 @@ module rounder (Result, DenormIO, Flags, rm, P, OvEn,
 
    // Set the least (L), round (R), and sticky (S) bits based on
    // the precision. 
-   assign {L, R, S} = P ? {A[40],A[39],S_SP} : {A[11],A[10],S_DP};
+   assign {L, R, S} = P[0] ? {A[40],A[39],S_SP} : {A[11],A[10],S_DP};
 
    // Add one if ((the rounding mode is round-to-nearest) and (R is one) and
    // (S or L is one)) or ((the rounding mode is towards plus or minus 
@@ -94,7 +94,7 @@ module rounder (Result, DenormIO, Flags, rm, P, OvEn,
    // This could be simplified by using a specialized adder.
    // The current adder is actually 64-bits. The leading one 
    // for normalized results in not included in the addition.
-   assign B = {{22{VSS}}, add_one&P, {28{VSS}}, add_one&~P};
+   assign B = {{22{VSS}}, add_one&P[0], {28{VSS}}, add_one&~P[0]};
    assign {Cout, Tmant} = A[62:11] + B;   
 
    // Now that rounding is done, we compute the final exponent
@@ -132,11 +132,11 @@ module rounder (Result, DenormIO, Flags, rm, P, OvEn,
    // 10 = NaN
    assign Valid = (~sel_inv[2]&~sel_inv[1]&~sel_inv[0]);
    assign NaN   = ~sel_inv[2]&~sel_inv[1]& sel_inv[0];
-   assign UnderFlow = ((P & UnFlow_SP | UnFlow_DP)&Valid&exp_valid) |
+   assign UnderFlow = ((P[0] & UnFlow_SP | UnFlow_DP)&Valid&exp_valid) |
 		      (~Aexp[10]&Aexp[9]&Aexp[8]&Aexp[7]&~Aexp[6]
 		       &~Aexp[5]&~Aexp[4]&~Aexp[3]&~Aexp[2]
 		       &~Aexp[1]&~Aexp[0]&sel_inv[3]);
-   assign OverFlow  = (P & OvFlow_SP | OvFlow_DP)&Valid&~UnderFlow&exp_valid;
+   assign OverFlow  = (P[0] & OvFlow_SP | OvFlow_DP)&Valid&~UnderFlow&exp_valid;
 
    // The DenormIO is set if underflow has occurred or if their was a
    // denormalized input. 
@@ -189,7 +189,7 @@ module rounder (Result, DenormIO, Flags, rm, P, OvEn,
    assign Adj_exp = OverFlow & OvEn & ~convert;
    assign Rexp[10:1] = ({10{~Valid}} | 
 			{Texp[10]&~Adj_exp, Texp[9]&~Adj_exp, Texp[8], 
-			 (Texp[7]^P)&~(Adj_exp&P), Texp[6]&~(Adj_exp&P), Texp[5:1]} | 
+			 (Texp[7]^P[0])&~(Adj_exp&P[0]), Texp[6]&~(Adj_exp&P[0]), Texp[5:1]} | 
 		        {10{VeryLarge}})&{10{~Rzero | NaN}};
    assign Rexp[0]    = ({~Valid} | Texp[0] | Infinite)&(~Rzero | NaN)&~Largest;
    
