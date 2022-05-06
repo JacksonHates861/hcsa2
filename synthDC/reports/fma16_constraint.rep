@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : constraint
+Design : fma16
+Version: R-2020.09-SP5
+Date   : Mon Apr 25 08:55:14 2022
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    vclk                     0.000000  1.000000  0.000000
+    default                  0.000000  1.000000  0.000000
+    -----------------------------------------------------
+    max_delay/setup                              0.000000
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    vclk                     0.000000         0  0.000000
+    default                  0.000000         0  0.000000
+    -----------------------------------------------------
+    critical_range                               0.000000
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    multiport_net                                0.000000 (MET)
+    max_transition                               0.000000 (MET)
+    max_fanout                                   0.000000 (MET)
+    max_capacitance                              0.000000 (MET)
+    max_delay/setup                              0.000000 (MET)
+    critical_range                               0.000000 (MET)
+    max_leakage_power                            588.086060
+                                                          (VIOLATED)
+
+
+1

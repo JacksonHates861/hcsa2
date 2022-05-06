@@ -1,0 +1,82 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+        -capacitance
+Design : fma16
+Version: R-2020.09-SP5
+Date   : Mon Apr 25 08:55:14 2022
+****************************************
+
+Operating Conditions: PVT_1P2V_25C   Library: scc9gena_tt_1.2v_25C
+Wire Load Model Mode: top
+
+  Startpoint: y[1] (input port clocked by vclk)
+  Endpoint: result[15] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock vclk (rise edge)                                   0.000000   0.000000
+  clock network delay (ideal)                              0.000000   0.000000
+  input external delay                                     0.100000   0.100000 r
+  y[1] (in)                                      0.016234  0.003952   0.103952 r
+  y[1] (net)                     1     0.001772            0.000000   0.103952 r
+  U50/Y (scc9gena_inv_0)                         0.014972  0.015589   0.119540 f
+  n3 (net)                       3     0.003059            0.000000   0.119540 f
+  U9/Y (scc9gena_inv_m)                          0.184243  0.130773   0.250314 r
+  n4 (net)                      12     0.012315            0.000000   0.250314 r
+  U100/Y (scc9gena_nand2_m)                      0.048500  0.032996   0.283310 f
+  n12 (net)                      1     0.001756            0.000000   0.283310 f
+  U5/Y (scc9gena_xnorlp2_m)                      0.124498  0.105824   0.389133 r
+  n15 (net)                      1     0.003381            0.000000   0.389133 r
+  U101/SUM (scc9gena_fa_m)                       0.046658  0.169383   0.558516 r
+  intadd_9/A[1] (net)            1     0.002512            0.000000   0.558516 r
+  intadd_9/U3/SUM (scc9gena_fa_m)                0.035211  0.116850   0.675366 f
+  intadd_0/A[3] (net)            1     0.002530            0.000000   0.675366 f
+  intadd_0/U12/COUT (scc9gena_fa_m)              0.041353  0.107897   0.783262 f
+  intadd_0/n11 (net)             1     0.003202            0.000000   0.783262 f
+  intadd_0/U11/COUT (scc9gena_fa_m)              0.041353  0.107502   0.890764 f
+  intadd_0/n10 (net)             1     0.003202            0.000000   0.890764 f
+  intadd_0/U10/COUT (scc9gena_fa_m)              0.041353  0.107502   0.998266 f
+  intadd_0/n9 (net)              1     0.003202            0.000000   0.998266 f
+  intadd_0/U9/COUT (scc9gena_fa_m)               0.041353  0.107502   1.105768 f
+  intadd_0/n8 (net)              1     0.003202            0.000000   1.105768 f
+  intadd_0/U8/COUT (scc9gena_fa_m)               0.041353  0.107502   1.213269 f
+  intadd_0/n7 (net)              1     0.003202            0.000000   1.213269 f
+  intadd_0/U7/COUT (scc9gena_fa_m)               0.041353  0.107502   1.320771 f
+  intadd_0/n6 (net)              1     0.003202            0.000000   1.320771 f
+  intadd_0/U6/COUT (scc9gena_fa_m)               0.041353  0.107502   1.428273 f
+  intadd_0/n5 (net)              1     0.003202            0.000000   1.428273 f
+  intadd_0/U5/COUT (scc9gena_fa_m)               0.041353  0.107502   1.535775 f
+  intadd_0/n4 (net)              1     0.003202            0.000000   1.535775 f
+  intadd_0/U4/COUT (scc9gena_fa_m)               0.041354  0.107502   1.643276 f
+  intadd_0/n3 (net)              1     0.003202            0.000000   1.643276 f
+  intadd_0/U3/COUT (scc9gena_fa_m)               0.041353  0.107502   1.750778 f
+  intadd_0/n2 (net)              1     0.003202            0.000000   1.750778 f
+  intadd_0/U2/COUT (scc9gena_fa_m)               0.030779  0.093949   1.844727 f
+  intadd_0/n1 (net)              1     0.001781            0.000000   1.844727 f
+  U15/Y (scc9gena_xnorlp2_m)                     0.073614  0.068293   1.913021 r
+  n74 (net)                      1     0.001621            0.000000   1.913021 r
+  U16/Y (scc9gena_xnorlp2_m)                     0.080421  0.081634   1.994655 r
+  result[15] (net)               1     0.001771            0.000000   1.994655 r
+  result[15] (out)                               0.080421  0.000000   1.994655 r
+  data arrival time                                                   1.994655
+
+  clock vclk (rise edge)                                   4.000000   4.000000
+  clock network delay (ideal)                              0.000000   4.000000
+  output external delay                                    -0.100000  3.900000
+  data required time                                                  3.900000
+  -------------------------------------------------------------------------------
+  data required time                                                  3.900000
+  data arrival time                                                   -1.994655
+  -------------------------------------------------------------------------------
+  slack (MET)                                                         1.905345
+
+
+1
