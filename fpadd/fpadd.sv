@@ -32,7 +32,7 @@ module fpadd (AS_Result, Flags, Denorm, op1, op2, rm, op_type, P, OvEn, UnEn);
    input [63:0] op2;		// 2nd input operand (B)
    input [2:0] 	rm;		// Rounding mode - specify values 
    input [2:0]	op_type;	// Function opcode
-   input [1:0]	P;   		// Result Precision (00 for double, 01 for single, 11 for half)
+   input 	P;   		// Result Precision (0 for double, 1 for single)
    input 	OvEn;		// Overflow trap enabled
    input 	UnEn;   	// Underflow trap enabled
 

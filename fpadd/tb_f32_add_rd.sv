@@ -5,7 +5,7 @@ module tb ();
    logic [31:0]  op2;		
    logic [2:0] 	 rm;		
    logic [2:0]	 op_type;	
-   logic [1:0]	 P;   		
+   logic 	 P;   		
    logic 	 OvEn;		
    logic 	 UnEn;   	
 
@@ -44,7 +44,7 @@ module tb ();
      begin
 	desc3 = handle3;
 	#0  op_type = 3'b000;
-	#0  P = 2'b01;
+	#0  P = 1'b1;
 	#0  rm = 3'b011;
 	#0  OvEn = 1'b0;
 	#0  UnEn = 1'b0;	

@@ -27,7 +27,7 @@ if [file exists work] {
 vlib work
 
 # compile source files
-vlog convert_inputs.sv exception.sv lzd.sv shifter.sv rounder.sv fpadd.sv tb_f32_add_ru.sv
+vlog convert_inputs.sv exception.v lzd.v shifter.v rounder.v fpadd.v tb_f32_add_ru.sv
 
 # start and run simulation
 vsim -voptargs=+acc work.tb
